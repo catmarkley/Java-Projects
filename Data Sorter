@@ -1,0 +1,61 @@
+//Created by Catherine Markley
+//This program will sort data in the form of numbers into 6 different categories
+//This was created to aid with an assignment for engineering class where we were given a large amount of numbers
+
+import java.util.Scanner;
+import java.util.ArrayList;
+
+public class DataSorter
+{
+	public static int cat1Count, cat2Count, cat3Count, cat4Count, cat5Count, cat6Count;
+	
+	public static void main(String args[])
+	{
+		Scanner input = new Scanner(System.in);
+		cat1Count = cat2Count = cat3Count = cat4Count = cat5Count = cat6Count = 0;
+		ArrayList<Double> temp = new ArrayList<Double>();
+		
+		do
+		{
+			double num = input.nextDouble();
+			temp.add(num);
+		}
+		while (input.nextDouble() != 0.0);
+		
+		for (int x=0; x<temp.size(); x++)
+		{
+			sort(temp.get(x));
+		}
+		
+		display();
+	}
+	
+	public static void sort(double number)
+	{
+		if (number <94.3) 
+			cat1Count++;
+		else if (number >=94.3 && number <96.8)
+			cat2Count ++;
+		else if (number >=96.8 && number <99.3)
+			cat3Count ++;
+		else if (number >=99.3 && number <101.8)
+			cat4Count ++;
+		else if (number >=101.8 && number <104.3)
+			cat5Count ++;
+		else if (number >=104.3) 
+			cat6Count ++;
+		else 
+			System.out.println("Error");		
+	}
+	
+	public static void display()
+	{
+		System.out.println("For <94.3:              " + cat1Count);
+		System.out.println("For >=94.3 and <96.8:   " + cat2Count);
+		System.out.println("For >=96.8 and <99.3:   " + cat3Count);
+		System.out.println("For >=99.3 and <101.8:  " + cat4Count);
+		System.out.println("For >=101.8 and <104.3: " + cat5Count);
+		System.out.println("For >=104.3:            " + cat6Count);
+	}
+
+}
