@@ -1,2 +1,2 @@
 # Java-Projects
-Various Java programs I have written
+Various Java Programs I Have Written
